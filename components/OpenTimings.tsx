@@ -9,7 +9,7 @@ export default function OpenTimings() {
 
   useEffect(() => {
     const londonTimeIn24 = new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Europe/london",
+      timeZone: "Asia/Kolkata",
       hour: "2-digit",
       hour12: false,
     }).format(new Date());

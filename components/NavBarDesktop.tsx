@@ -7,12 +7,9 @@ import OpenTimings from "./OpenTimings";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
-  { label: "Entertainment", href: "/entertainment" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Feed", href: "/blog" },
-  { label: "Podcast", href: "/podcast" },
   { label: "Contact", href: "/contact" },
-  { label: "Shop", href: "/shop" },
 ];
 
 export default function NavBarDesktop() {
@@ -22,10 +19,10 @@ export default function NavBarDesktop() {
 
       <HoverReveal
         className="max-lg:hidden"
-        beforeHover="LONDON,ENGLAND"
+        beforeHover="DELHI,INDIA"
         afterHover={
-          <Link href="mailto:info@thelinestudio.com">
-            info@thelinestudio.com
+          <Link href="mailto:hello@reviverstudio.com">
+            hello@reviverstudio.com
           </Link>
         }
       />

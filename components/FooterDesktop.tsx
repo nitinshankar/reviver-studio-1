@@ -6,35 +6,31 @@ import Link from "next/link";
 
 export default function FooterDesktop() {
   const addressLines = [
-    "The Line Animation Studio Ltd",
-    "Studio 02",
-    "De Beauvoir Block, 92–96",
-    "De Beauvoir Road",
-    "London, N1 4EN",
+    "The Reviver Studio India",
+    "Naraina Vihar",
+    "New Delhi",
+    "India",
+    "110028",
   ];
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Work", href: "/work" },
-    { label: "Entertainment", href: "/entertainment" },
+    { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
-    { label: "Feed", href: "/blog" },
-    { label: "Podcast", href: "/podcast" },
     { label: "Contact", href: "/contact" },
-    { label: "Shop", href: "/shop" },
   ];
 
   const socialMediaLinks = [
-    { name: "YouTube", href: "https://www.youtube.com/THELINEanimation" },
+    { name: "YouTube", href: "#" },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/thelineanimation/",
+      href: "#",
     },
-    { name: "TikTok", href: "https://www.tiktok.com/@thelineanimation" },
-    { name: "X", href: "https://x.com/thelinestudio" },
-    { name: "Facebook", href: "https://www.facebook.com/thelineanimation" },
+    { name: "X", href: "#" },
+    { name: "Facebook", href: "#" },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/company/the-line-studio/",
+      href: "#",
     },
   ];
   return (
@@ -45,7 +41,7 @@ export default function FooterDesktop() {
           <Label>
             <span className="font-light">/</span>&nbsp; Find us
           </Label>
-          <Link href="https://maps.app.goo.gl/fe8KazXCfyXxniSV6">
+          <Link href="#">
             <motion.div
               initial="initial"
               whileHover="whileHover"
