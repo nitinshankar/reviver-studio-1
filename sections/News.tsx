@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function News() {
   const listItems = [
     {
-      href: "https://reviverstudio.com/blog/the-line-partners-with-riot-games-to-bring-spirit-blossom-festival-to-life",
+      href: "#",
       imgSrc: CollaborationRiotGames,
       label: (
         <>
@@ -40,7 +40,7 @@ export default function News() {
     },
     {
       imgSrc: LineEditions,
-      href: "https://reviverstudio.com/blog/editions-drop-001",
+      href: "#",
       label: (
         <>
           <span className="font-light">/</span>&nbsp; STUDIO NEWS&nbsp;
@@ -64,7 +64,7 @@ export default function News() {
     <div className="relative z-10 bg-off-white px-2 pt-2 lg:px-[0.46296vw] lg:pt-[0.46296vw]">
       <Header label="From the Studio" title="News" />
       <div className="mt-[158px] mb-[15px] lg:mt-[18.51852vw] lg:mb-[1.04167vw]">
-        <Button href="https://reviverstudio.com/blog">
+        <Button href="#">
           <span className="relative">
             See All
             <span className="absolute top-0 left-full ml-[3px] text-[0.70vw] leading-[1.75] font-[440] tracking-[-.01em]">

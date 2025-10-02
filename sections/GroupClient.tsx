@@ -11,18 +11,17 @@ export default function SectionOfSectionsClient({ Logo, showHighlights = true, s
     {
       videoSrc: "/assets/videos/projects/the-hex.mp4",
       title: "The Hex - Warframe: 1999",
-      linkToProject:
-        "https://reviverstudio.com/work/the-hex-warframe-1999-animated-prologue",
+      linkToProject: "/work/the-hex-warframe-1999-animated-prologue",
     },
     {
       videoSrc: "/assets/videos/projects/azuki-elementals.mp4",
       title: "Azuki Elementals",
-      linkToProject: "https://reviverstudio.com/work/azuki",
+      linkToProject: "/work/azuki",
     },
     {
       videoSrc: "/assets/videos/projects/marvel-snap.mp4",
       title: "Marvel Snap / Hero",
-      linkToProject: "https://reviverstudio.com/work/hero-marvel-snap",
+      linkToProject: "/work/hero-marvel-snap",
     },
   ];
   return (

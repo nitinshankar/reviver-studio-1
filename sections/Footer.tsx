@@ -11,7 +11,7 @@ import { ReactNode } from "react";
 
 export default function Footer() {
   const nodes: ReactNode[] = [
-    <Link href="https://reviverstudio.com/privacy">Privacy</Link>,
+    <Link href="#">Privacy</Link>,
     <Up />,
   ];
   return (
