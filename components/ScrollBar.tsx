@@ -6,45 +6,64 @@ import {
   useMotionValueEvent,
   useTransform,
 } from "motion/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ScrollBar() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollBarHeight = (4.62963 * window.innerWidth) / 100;
   const scrollY = useMotionValue(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+  const [scrollBarHeight, setScrollBarHeight] = useState(0);
 
-  const y = useTransform(
-    scrollY,
-    [
-      0,
-      document.documentElement.scrollHeight -
-        document.documentElement.clientHeight,
-    ],
-    [0, document.documentElement.clientHeight - scrollBarHeight],
-  );
-  const windowTop = useTransform(
-    y,
-    [0, document.documentElement.clientHeight - scrollBarHeight],
-    [
-      0,
-      document.documentElement.scrollHeight -
-        document.documentElement.clientHeight,
-    ],
-  );
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+        const height: number = document.documentElement.clientHeight;
+        const barHeight: number = (4.62963 * window.innerWidth) / 100;
+        setWindowHeight(height);
+        setScrollBarHeight(barHeight);
+      }
+    };
 
-  useMotionValueEvent(windowTop, "change", (latest) => {
-    window.scrollTo({
-      top: Math.floor(latest),
-    });
-  });
+    updateDimensions();
+    if (typeof window !== 'undefined') {
+      window.addEventListener("resize", updateDimensions);
+      return () => window.removeEventListener("resize", updateDimensions);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      scrollY.set(window.scrollY);
+      if (typeof window !== 'undefined') {
+        scrollY.set(window.scrollY);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, [scrollY]);
+
+  const y = useTransform(
+    scrollY,
+    [0, document.documentElement.scrollHeight - windowHeight],
+    [0, windowHeight - scrollBarHeight],
+  );
+
+  const windowTop = useTransform(
+    y,
+    [0, windowHeight - scrollBarHeight],
+    [0, document.documentElement.scrollHeight - windowHeight],
+  );
+
+  useMotionValueEvent(windowTop, "change", (latest) => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: Math.floor(latest),
+      });
+    }
+  });
+
   return (
     <motion.div
       ref={containerRef}

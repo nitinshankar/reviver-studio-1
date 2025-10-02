@@ -24,8 +24,8 @@ export default function NavBar() {
       >
         <Link
           className="col-span-2 h-[22px] w-[126px] lg:h-[1.27315vw] lg:w-[7.29167vw]"
-          href="https://thelinestudio.com/"
-          aria-label="The Line Studio"
+          href="/"
+          aria-label="Reviver Studio"
         >
           <Logo />
         </Link>

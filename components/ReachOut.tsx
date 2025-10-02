@@ -21,14 +21,19 @@ export default function ReachOut({ className }: ReachOutProps) {
       </Label>
       <div className="flex flex-col text-[24px] leading-[.95] font-[440] tracking-[-.01em] lg:text-[1.85185vw] lg:leading-[1.1] lg:font-[470] lg:tracking-[-0.01em]">
         <UnderlineOnHover underlineColor="#f8f8f8" className="w-fit">
-          <Link href="mailto:info@thelineanimation.com%C2%A0">
-            info@thelinestudio.com
+          <Link href="mailto:hello@reviverstudio.com">
+            hello@reviverstudio.com
+          </Link>
+        </UnderlineOnHover>
+        <UnderlineOnHover underlineColor="#f8f8f8" className="w-fit">
+          <Link href="mailto:nitin@reviverstudio.com">
+            nitin@reviverstudio.com
           </Link>
         </UnderlineOnHover>
         <div className="flex">
           /&nbsp;
           <UnderlineOnHover underlineColor="#f8f8f8" className="w-fit">
-            <Link href="tel:442030020224">44 (0)20 30020224</Link>
+            <Link href="tel:+919899706783">+91 9899706783</Link>
           </UnderlineOnHover>
         </div>
       </div>

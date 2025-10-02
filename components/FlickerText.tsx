@@ -3,7 +3,14 @@ import { useIsInitialRender } from "@/hooks/useIsInitialRender";
 import { useIsMouseIn } from "@/hooks/useIsMouseIn";
 import { cubicBezier } from "motion/react";
 import { motion } from "motion/react";
-export default function FlickerText({ children }: { children: string }) {
+import { cn } from "@/utils/cn";
+export default function FlickerText({
+  children,
+  size = "lg",
+}: {
+  children: string;
+  size?: "lg" | "sm";
+}) {
   const isInitialRender = useIsInitialRender();
   const { containerRef, mouseIn } = useIsMouseIn<HTMLDivElement>();
   const x = 0.08;
@@ -19,12 +26,21 @@ export default function FlickerText({ children }: { children: string }) {
              --cta-x:12.70602vw;
             }
         }
+        #cta-sm{
+            --cta-x:34px;
+        }
+        @media (min-width:1024px){
+            #cta-sm{
+              --cta-x:4.5vw;
+            }
+        }
          `}
       </style>
       <div ref={containerRef} className="w-full">
         <div className="relative w-fit">
           <motion.div
-            id="cta"
+            id={size === "sm" ? "cta-sm" : "cta"}
+            suppressHydrationWarning={true}
             variants={{
               initial: {
                 x: "0px",
@@ -41,7 +57,12 @@ export default function FlickerText({ children }: { children: string }) {
                 },
               },
             }}
-            className="text-[72px] leading-[0.95] font-medium tracking-[-0.04em] text-void-black lg:indent-[-0.90vw] lg:text-[12.15278vw]"
+            className={cn(
+              "leading-[0.95] font-medium tracking-[-0.04em] text-void-black",
+              size === "sm"
+                ? "text-[32px] lg:text-[3.2vw]"
+                : "text-[72px] lg:indent-[-0.90vw] lg:text-[12.15278vw]",
+            )}
           >
             {children.split("").map((eachLetter, i) => (
               <motion.span

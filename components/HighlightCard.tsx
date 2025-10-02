@@ -8,6 +8,7 @@ import {
 } from "motion/react";
 import { useEffect } from "react";
 import SectionHeader from "@/components/Server/SectionHeader";
+import CallToAction from "@/components/Server/CallToAction";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { useSetNavTheme } from "@/app/providers/root/NavThemeProvider";
 
@@ -54,12 +55,16 @@ export default function HighlightCard({
   }, [isInView, backgroundColor]);
 
   return (
-    <div ref={ref} className="relative z-20 max-h-[25vh]">
+    <div ref={ref} className="relative z-20">
       <motion.div
         style={{ x, rotate, y }}
         className="h-screen origin-[0%_0%] bg-off-white px-2 pt-2 lg:origin-[0%_50%] lg:px-[0.46296vw] lg:pt-[0.46296vw]"
       >
-        <SectionHeader label="About the Line" title="Highlights" />
+        <SectionHeader label="Reviver Studio" title="Highlights" />
+        <div className="mt-16 flex flex-row items-center gap-12 px-2 pointer-events-auto lg:gap-[3vw] lg:px-[0.46296vw]">
+          <CallToAction size="sm" label="Work" href="/work" />
+          <CallToAction size="sm" label="Services" href="/services" />
+        </div>
       </motion.div>
     </div>
   );

@@ -4,6 +4,7 @@ import Video from "@/components/Server/Video";
 import Label from "./Label";
 import IntersectionObserverPlane from "./IntersectionObserverPlane";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function ClientsPlusPartnersClient() {
   return (
@@ -17,7 +18,13 @@ export default function ClientsPlusPartnersClient() {
         setThemeFrom="dark"
         className="absolute inset-x-0 top-0 h-10"
       />
-      <div className="absolute aspect-square w-[303px] text-off-white md:w-[41.84028vw]">
+      <Link
+        href="https://instagram.com/thereviverstudio"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Reel on Instagram"
+        className="absolute aspect-square w-[303px] cursor-pointer text-off-white md:w-[41.84028vw]"
+      >
         <motion.div
           variants={{
             scaleDown: {
@@ -52,14 +59,14 @@ export default function ClientsPlusPartnersClient() {
               <span className="inline-block size-[0.46296vw] rounded-full bg-off-white" />
               &nbsp; 1:26
             </Label>
-            <Label>The Line © MMXXV</Label>
+            <Label>Reviver Studio © MMXXV</Label>
           </div>
           <div className="absolute inset-0 flex items-center justify-center gap-2 md:gap-[1.09954vw]">
             <Play />
             <span>Reel</span>
           </div>
         </motion.div>
-      </div>
+      </Link>
       <IntersectionObserverPlane
         setThemeTo="dark"
         setThemeFrom="light"

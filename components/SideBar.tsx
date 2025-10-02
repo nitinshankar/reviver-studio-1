@@ -17,6 +17,7 @@ export default function SideBar({
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Work", href: "/work" },
+    { label: "Services", href: "/services" },
     { label: "Entertainment", href: "/entertainment" },
     { label: "About", href: "/about" },
     { label: "Feed", href: "/blog" },
@@ -63,9 +64,11 @@ export default function SideBar({
               </Label>
               <Link
                 className="relative flex items-center justify-between text-[24px] leading-[0.95] font-[440] tracking-[-0.01em]"
-                href="mailto:info@thelineanimation.com"
+                href="mailto:hello@reviverstudio.com"
               >
-                <span>info@thelineanimation.com</span>
+                <span>
+
+hello@reviverstudio.com</span>
                 <Arrow fill="#f8f8f8" />
                 <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-off-white" />
               </Link>

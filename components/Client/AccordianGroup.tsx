@@ -35,6 +35,7 @@ export default function AccordianGroup({
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Work", href: "/work" },
+    { label: "Services", href: "/services" },
     { label: "Entertainment", href: "/entertainment" },
     { label: "About", href: "/about" },
     { label: "Feed", href: "/blog" },

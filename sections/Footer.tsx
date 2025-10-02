@@ -11,7 +11,6 @@ import { ReactNode } from "react";
 
 export default function Footer() {
   const nodes: ReactNode[] = [
-    <>Site Credits</>,
     <Link href="https://thelinestudio.com/privacy">Privacy</Link>,
     <Up />,
   ];
@@ -21,15 +20,15 @@ export default function Footer() {
       <FooterMobile />
       <Input className="relative z-20 col-span-3 col-start-1" />
       <div className="col-span-5 col-start-6 flex justify-between text-[14px] leading-[0.85] font-[470] tracking-[-0.01em] uppercase max-lg:pt-6 max-lg:pb-2 lg:items-end lg:justify-end lg:text-[1.27315vw] lg:font-regular-plus">
-        <span className="inline lg:hidden">© 2025</span>
+        <span className="inline lg:hidden">© REVIVER STUDIO 2025</span>
         <span className="hidden lg:inline">
-          © THE LINE ANIMATION STUDIO 2025 &nbsp;
+          © REVIVER STUDIO 2025 &nbsp;
           <span className="font-light">/</span>
           &nbsp;
         </span>
         <List>
-          {nodes.map((node) => (
-            <BlinkText repeat={1} className="cursor-pointer">
+          {nodes.map((node, index) => (
+            <BlinkText key={index} repeat={1} className="cursor-pointer">
               {node}
             </BlinkText>
           ))}
