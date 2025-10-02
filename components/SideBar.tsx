@@ -10,20 +10,18 @@ import Arrow from "./SVGs/Arrow";
 export default function SideBar({
   isMobileMenuOpen,
   isDesktop,
+  setIsMobileMenuOpen,
 }: {
   isMobileMenuOpen: boolean;
   isDesktop: boolean | null;
+  setIsMobileMenuOpen: (value: boolean) => void;
 }) {
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Work", href: "/work" },
-    { label: "Services", href: "/services" },
-    { label: "Entertainment", href: "/entertainment" },
-    { label: "About", href: "/about" },
-    { label: "Feed", href: "/blog" },
-    { label: "Podcast", href: "/podcast" },
-    { label: "Contact", href: "/contact" },
-    { label: "Shop", href: "/shop" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
   ];
   return (
     <AnimatePresence>
@@ -54,7 +52,11 @@ export default function SideBar({
             </div>
             <div className="relative z-20 px-2 py-[70px]">
               {navItems.map((eachNavItem) => (
-                <NavItem key={eachNavItem.href} {...eachNavItem} />
+                <NavItem 
+                  key={eachNavItem.href} 
+                  {...eachNavItem} 
+                  onItemClick={() => setIsMobileMenuOpen(false)}
+                />
               ))}
             </div>
             <div className="relative z-20 space-y-[14px] pb-1.5">
@@ -63,7 +65,7 @@ export default function SideBar({
                 {"Let's talk"}
               </Label>
               <Link
-                className="relative flex items-center justify-between text-[24px] leading-[0.95] font-[440] tracking-[-0.01em]"
+                className="relative flex items-center justify-between text-[28px] leading-[0.95] font-[440] tracking-[-0.01em]"
                 href="mailto:hello@reviverstudio.com"
               >
                 <span>

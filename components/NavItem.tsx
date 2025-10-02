@@ -11,9 +11,11 @@ interface NavItemProps {
   href: string;
   label: string | ReactNode;
   className?: string;
+  onItemClick?: () => void;
 }
-export default function NavItem({ href, label, className }: NavItemProps) {
+export default function NavItem({ href, label, className, onItemClick }: NavItemProps) {
   const currentPath = usePathname();
+  const isRedOnHover = ["/", "/work", "/services", "/about", "/contact"].includes(href);
   return (
     <>
       <style>
@@ -28,12 +30,12 @@ export default function NavItem({ href, label, className }: NavItemProps) {
       }
     `}
       </style>
-      <Link href={href} id="nav-item">
+      <Link href={href} id="nav-item" onClick={onItemClick}>
         <motion.div
           initial="initial"
           whileHover="whileHover"
           className={cn(
-            "flex items-center text-[46px] leading-[0.8] font-[470] tracking-[-0.03em] uppercase lg:text-[1.27315vw] lg:leading-[0.85] lg:font-[440] lg:tracking-[-0.01em]",
+            "group flex items-center text-[46px] leading-[0.8] font-[470] tracking-[-0.03em] uppercase lg:text-[1.27315vw] lg:leading-[0.85] lg:font-[440] lg:tracking-[-0.01em]",
             className,
           )}
         >
@@ -57,7 +59,10 @@ export default function NavItem({ href, label, className }: NavItemProps) {
             // transition={{
             //   initial: { duration: 0, ease: cubicBezier(0.19, 1, 0.22, 1) },
             // }}
-            className={cn(currentPath == href && "lg:text-flare-red")}
+            className={cn(
+              currentPath == href && "lg:text-flare-red",
+              isRedOnHover && "group-hover:text-[#ff0000]",
+            )}
           >
             {label}
           </BlinkText>

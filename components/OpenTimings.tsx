@@ -23,7 +23,7 @@ export default function OpenTimings() {
       initial="initial"
       {...(isStudioOpen && { whileHover: "whileHover" })}
     >
-      <Label>
+      <Label className="text-base xl:text-[1.1vw]">
         <BlinkText
           initial={false}
           whileHover={undefined}

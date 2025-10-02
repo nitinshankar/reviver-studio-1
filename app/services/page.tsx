@@ -1,72 +1,101 @@
 "use client";
-import { motion, useMotionValue } from "motion/react";
-import Video from "@/components/Server/Video";
-import { useEffect } from "react";
+import Group from "@/sections/Group";
+import LogoWithServices from "@/components/SVGs/LogoWithServices";
+import TheStudio from "@/sections/TheStudio";
+import ClientsPlusPartners from "@/sections/ClientsPlusPartners";
+import News from "@/sections/News";
+import Contact from "@/sections/Contact";
+import Footer from "@/sections/Footer";
 import { useSetNavTheme } from "@/app/providers/root/NavThemeProvider";
-import SectionHeader from "@/components/Server/SectionHeader";
-import StyledLink from "@/components/Server/StyledLink";
+import { useEffect } from "react";
+import CallToAction from "@/components/Server/CallToAction";
+import { motion } from "motion/react";
+import Image from "next/image";
+import SquareImg from "@/public/assets/images/square.png";
 
 export default function ServicesPage() {
-  const backgroundColor = useMotionValue("transparent");
   const setNavTheme = useSetNavTheme();
 
   useEffect(() => {
-    setNavTheme("dark");
+    return () => setNavTheme("dark");
   }, [setNavTheme]);
+
+  const SERVICES: { title: string; description: string; image: typeof SquareImg }[] = [
+    { title: "Brand Strategy", description: "Positioning, naming, messaging, and go‑to‑market foundations.", image: SquareImg },
+    { title: "Identity Design", description: "Logos, visual systems, typography, color, and brand guidelines.", image: SquareImg },
+    { title: "Packaging", description: "Structural design, artwork systems, and print production support.", image: SquareImg },
+    { title: "Motion & 3D", description: "Title sequences, product animations, and dynamic brand assets.", image: SquareImg },
+    { title: "Product Design (UI/UX)", description: "Web/app flows, wireframes, design systems, and prototypes.", image: SquareImg },
+    { title: "Websites & CMS", description: "Marketing sites, headless CMS, and high‑performance builds.", image: SquareImg },
+    { title: "E‑commerce", description: "Storefront UX, PDPs, checkout flows, and conversion optimization.", image: SquareImg },
+    { title: "Marketing Creatives", description: "Campaign key visuals, social kits, and ad creatives at scale.", image: SquareImg },
+    { title: "Content & Production", description: "Photo/video production, post, and content toolkits.", image: SquareImg },
+  ];
 
   return (
     <main>
-      <div className="relative max-w-screen overflow-x-clip lg:mb-[25vh]">
-        <div className="sticky top-0 z-10 pb-[100vh]">
-          <div className="h-screen">
-            <Video src="/assets/videos/hero.mp4" />
-          </div>
-        </div>
-        <div className="relative z-30">
-          <SectionHeader label="Reviver Studio" title="Services" />
-          <motion.div
-            style={{ backgroundColor }}
-            className="relative z-30 flex flex-col gap-[5vh] overflow-x-clip px-2 pb-[10vh] lg:gap-[15vh] lg:px-[0.46296vw]"
-          >
-            <div className="grid grid-cols-1 gap-[2vh] lg:grid-cols-3 lg:gap-[1.85185vw]">
-              <div>
-                <h2 className="text-[32px] leading-[1] font-medium tracking-[-0.02em] lg:text-[2.77778vw]">
-                  Design & Branding
-                </h2>
-                <p className="mt-2 max-w-[60ch] text-[16px] leading-[1.4] text-void-black/70 lg:text-[0.83333vw]">
-                  Identity systems, visual language, and brand toolkits crafted for
-                  clarity, recognition, and long-term scale.
-                </p>
-              </div>
-              <div>
-                <h2 className="text-[32px] leading-[1] font-medium tracking-[-0.02em] lg:text-[2.77778vw]">
-                  Web Experiences
-                </h2>
-                <p className="mt-2 max-w-[60ch] text-[16px] leading-[1.4] text-void-black/70 lg:text-[0.83333vw]">
-                  Modern, performant websites and apps with motion-first UX,
-                  accessible interactions, and robust SEO.
-                </p>
-              </div>
-              <div>
-                <h2 className="text-[32px] leading-[1] font-medium tracking-[-0.02em] lg:text-[2.77778vw]">
-                  Content & Production
-                </h2>
-                <p className="mt-2 max-w-[60ch] text-[16px] leading-[1.4] text-void-black/70 lg:text-[0.83333vw]">
-                  End-to-end creative: art direction, video, and campaigns that
-                  move audiences and deliver results.
-                </p>
-              </div>
-            </div>
+      <Group Logo={LogoWithServices} showHighlights={false} showProjects={false} compact={true} />
 
-            <div className="mt-[5vh] flex flex-wrap gap-[14px]">
-              <StyledLink href="/work">See our work</StyledLink>
-              <StyledLink href="/contact">Start a project</StyledLink>
-            </div>
-          </motion.div>
+      {/* Services Section - light design */}
+      <div className="relative z-30 flex flex-col gap-[5vh] overflow-x-clip bg-[#f8f8f8] px-2 py-[6vh] text-[#0b0b0b] lg:gap-[10vh] lg:px-[0.46296vw] lg:py-[8vh]">
+        <div className="flex flex-col gap-[2vh] lg:gap-[3vh]">
+          <h2 className="text-[36px] font-bold leading-[1.1] lg:text-[4vw]">What we do</h2>
+          <p className="max-w-[80ch] text-[18px] leading-[1.6] text-[#0b0b0b]/75 lg:text-[1.3vw]">
+            We partner across strategy, identity, product, content, and growth to build brands that move.
+          </p>
         </div>
+        <div className="grid grid-cols-1 gap-[2vh] lg:grid-cols-3 lg:gap-[2vw]">
+          {SERVICES.map((s, i) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: i * 0.04, ease: [0.19, 1, 0.22, 1] }}
+              className="group rounded-none border border-[#0b0b0b]/12 bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-flare-red/60 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] lg:p-[1.4vw]"
+            >
+              <div className="flex flex-col gap-[1.6vh]">
+                <div className="text-[22px] font-bold leading-tight lg:text-[1.8vw]">{s.title}</div>
+                <div className="text-[16px] leading-[1.7] text-[#0b0b0b]/75 lg:text-[1.05vw]">{s.description}</div>
+                <div className="mt-2">
+                  <div className="relative w-full overflow-hidden rounded-none">
+                    <Image src={s.image} alt={s.title} className="w-full object-cover aspect-square" />
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0"
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* WhatsApp + Email (inline) */}
+        <div className="flex flex-col gap-[2vh] pt-[2vh] lg:flex-row lg:gap-[3vw] lg:pt-[3vh]">
+          <CallToAction
+            href="https://wa.me/+919899706783"
+            label="WhatsApp"
+            size="sm"
+            className="text-[#0b0b0b]"
+          />
+          <CallToAction
+            href="mailto:nitin@reviverstudio.com"
+            label="nitin@reviverstudio.com"
+            size="sm"
+            className="text-[#0b0b0b]"
+          />
+        </div>
+      </div>
+
+      <TheStudio />
+      <ClientsPlusPartners />
+      <div className="relative overflow-clip bg-flare-red">
+        <News />
+        <Contact />
+        <Footer />
       </div>
     </main>
   );
 }
-
-

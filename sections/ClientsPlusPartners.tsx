@@ -1,36 +1,25 @@
 import Label from "@/components/Label";
-import RiotGames from "@/components/SVGs/brands/RiotGames";
 import Marvel from "@/components/SVGs/brands/Marvel";
-import Blizzard from "@/components/SVGs/brands/Blizzard";
-import Honda from "@/components/SVGs/brands/Honda";
-import Mercedes from "@/components/SVGs/brands/Mercedes";
 
 import List from "@/components/List";
 import ClientsPlusPartnersClient from "@/components/ClientsPlusPartnersClient";
 
 function ClientsPlusPartners() {
   const brands = [
-    "Gucci",
-    <RiotGames />,
-    "Mercedes-Benz",
+    "Dell",
+    "NetApp",
+    "Autodesk",
     <Marvel />,
-    "Virgin",
-    "Gorillaz",
-    "Garena",
-    <Mercedes />,
-    "Doritos",
-    "Estee Lauder",
-    "Kenzo",
-    "Unilever",
-    "Vice",
-    "Sanrio",
-    "Freeview",
-    <Blizzard />,
-    "Honda",
-    "Channel 4",
-    "Ubisoft",
-    <Honda />,
-    "Azuki",
+    "Naarigis",
+    "IGNOU",
+    "The Indian Dori",
+    "Crafted Creative",
+    "AVP Entertainments",
+    "Dassault Systèmes",
+    "Adobe",
+    "Broadridge",
+    "Khazana Jewellery",
+    "Lyve Global",
   ];
 
   return (

@@ -22,7 +22,7 @@ export default function CallToAction({
       <motion.div
         variants={{ initial: { x: 0, opacity: 1 }, whileHover: { x: 10, opacity: 0 } }}
         transition={{ duration: 0.35, ease: cubicBezier(0.19, 1, 0.22, 1) }}
-        className="relative h-[16px] w-[20px] overflow-hidden lg:h-[1.25vw] lg:w-[1.8vw]"
+        className="relative h-[16px] w-[26px] overflow-visible lg:h-[1.25vw] lg:w-[2.2vw]"
       >
         <Arrow />
       </motion.div>

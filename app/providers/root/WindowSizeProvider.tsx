@@ -8,17 +8,19 @@ import {
   useState,
 } from "react";
 
-const WindowSizeContext = createContext<boolean | null>(null);
+const WindowSizeContext = createContext<boolean>(true);
 
 export const WindowSizeProvider = ({
   children,
 }: Readonly<{ children: ReactNode }>) => {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  // Start with a mobile-first default to match SSR
+  const [isMobile, setIsMobile] = useState<boolean>(true);
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth >= 1024);
     };
-    handleResize();
+    handleResize(); // Will update on client after hydration
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

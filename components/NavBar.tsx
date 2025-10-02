@@ -17,9 +17,10 @@ export default function NavBar() {
   return (
     <>
       <motion.div
-        initial={navTheme}
+        initial={false}
         animate={navTheme}
         variants={{ light: { color: "#f8f8f8" }, dark: { color: "#0b0b0b" } }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 z-[60] flex w-full p-2 max-lg:justify-between lg:grid lg:grid-cols-9 lg:gap-x-[.46296vw] lg:p-[0.46296vw]"
       >
         <Link
@@ -39,7 +40,7 @@ export default function NavBar() {
             />
           ))}
       </motion.div>
-      <SideBar isMobileMenuOpen={isMobileMenuOpen} isDesktop={isDesktop} />
+      <SideBar isMobileMenuOpen={isMobileMenuOpen} isDesktop={isDesktop} setIsMobileMenuOpen={setIsMobileMenuOpen} />
     </>
   );
 }

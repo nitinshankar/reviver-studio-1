@@ -28,7 +28,7 @@ export default function List({ children, className, style }: ListProps) {
       {children.map((child, index) => (
         <div
           key={`listItem[${index}]`}
-          className="flex items-center first:[&>:first-child]:hidden"
+          className="flex items-center first:[&>:first-child]:hidden group"
         >
           <span className="font-light">/&nbsp;</span>
           <motion.span
@@ -36,8 +36,28 @@ export default function List({ children, className, style }: ListProps) {
               initial: { opacity: 0 },
               whileInView: { opacity: 1, transition: { duration: 0 } },
             }}
+            className="transition-colors duration-200 hover:text-[#ff0000]"
           >
-            {child}
+            {typeof child === 'string' ? (
+              child.split('').map((letter, i) => (
+                <motion.span
+                  key={`letter[${i}]`}
+                  className="inline-block"
+                  whileHover={{
+                    opacity: [1, 0, 1],
+                    transition: {
+                      duration: 0.1,
+                      repeat: 2,
+                      delay: i * 0.02,
+                    },
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))
+            ) : (
+              child
+            )}
           </motion.span>
           &nbsp;
         </div>

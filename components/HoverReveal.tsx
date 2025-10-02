@@ -42,7 +42,7 @@ export default function HoverReveal({
           key={isHovered ? "afterHover" : "beforeHover"}
           className="h-fit"
         >
-          <Label>{isHovered ? afterHover : beforeHover}</Label>
+          <Label className="text-lg xl:text-[1.1vw]">{isHovered ? afterHover : beforeHover}</Label>
         </motion.div>
       </AnimatePresence>
     </motion.div>

@@ -13,14 +13,17 @@ export default function ScrollBar() {
   const scrollY = useMotionValue(0);
   const [windowHeight, setWindowHeight] = useState(0);
   const [scrollBarHeight, setScrollBarHeight] = useState(0);
+  const [documentHeight, setDocumentHeight] = useState(0);
 
   useEffect(() => {
     const updateDimensions = () => {
       if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-        const height: number = document.documentElement.clientHeight;
-        const barHeight: number = (4.62963 * window.innerWidth) / 100;
+        const height = document.documentElement.clientHeight;
+        const barHeight = (4.62963 * window.innerWidth) / 100;
+        const docHeight = document.documentElement.scrollHeight;
         setWindowHeight(height);
         setScrollBarHeight(barHeight);
+        setDocumentHeight(docHeight);
       }
     };
 
@@ -37,32 +40,31 @@ export default function ScrollBar() {
         scrollY.set(window.scrollY);
       }
     };
-    
     if (typeof window !== 'undefined') {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [scrollY]);
 
-  const y = useTransform(
-    scrollY,
-    [0, document.documentElement.scrollHeight - windowHeight],
-    [0, windowHeight - scrollBarHeight],
-  );
+  const maxScroll = Math.max(documentHeight - windowHeight, 1);
+  const maxY = Math.max(windowHeight - scrollBarHeight, 0);
 
-  const windowTop = useTransform(
-    y,
-    [0, windowHeight - scrollBarHeight],
-    [0, document.documentElement.scrollHeight - windowHeight],
-  );
+  const y = useTransform(scrollY, [0, maxScroll], [0, maxY]);
+
+  const windowTop = useTransform(y, [0, maxY], [0, maxScroll]);
 
   useMotionValueEvent(windowTop, "change", (latest) => {
     if (typeof window !== 'undefined') {
-      window.scrollTo({
-        top: Math.floor(latest),
-      });
+      window.scrollTo({ top: Math.floor(latest) });
     }
   });
+
+  // Don’t render until we have initial sizes to avoid hydration diffs
+  const isReady = windowHeight > 0 && documentHeight > 0;
+
+  if (!isReady) {
+    return null;
+  }
 
   return (
     <motion.div

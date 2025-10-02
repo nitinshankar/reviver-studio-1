@@ -58,7 +58,7 @@ export default function FlickerText({
               },
             }}
             className={cn(
-              "leading-[0.95] font-medium tracking-[-0.04em] text-void-black",
+              "leading-[0.95] font-medium tracking-[-0.04em] text-void-black transition-colors duration-200 hover:text-[#ff0000]",
               size === "sm"
                 ? "text-[32px] lg:text-[3.2vw]"
                 : "text-[72px] lg:indent-[-0.90vw] lg:text-[12.15278vw]",

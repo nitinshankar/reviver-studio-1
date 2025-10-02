@@ -2,14 +2,16 @@
 import { cubicBezier, motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Video from "./Server/Video";
+import StyledLink from "./Server/StyledLink";
 import CardBoilerPlate from "./Server/CardBoilerPlate";
 
 interface ProjectCardProps {
   videoSrc: string;
   title: string;
+  linkToProject?: string;
 }
 
-export default function ProjectCard({ videoSrc, title }: ProjectCardProps) {
+export default function ProjectCard({ videoSrc, title, linkToProject }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -52,7 +54,7 @@ export default function ProjectCard({ videoSrc, title }: ProjectCardProps) {
 
   return (
     <>
-      <div ref={cardRef} className="relative z-10 max-h-[50vh]">
+      <div ref={cardRef} className="relative z-10 max-h-[50vh] lg:mt-[-10vh]">
         <motion.div
           style={{ x, y, rotate }}
           className="flex h-screen origin-bottom-right flex-col gap-[0.46296vw] bg-[#dfdfe3f2] lg:origin-[0%_25%]"
@@ -61,7 +63,11 @@ export default function ProjectCard({ videoSrc, title }: ProjectCardProps) {
             <h1 className="max-w-3/5 text-[34px] leading-[0.8] font-normal tracking-[-0.04em] text-void-black lg:text-[5.55556vw] lg:font-[470]">
               {title}
             </h1>
-            {/* <Button >View Projects</Button> */}
+            {linkToProject && (
+              <StyledLink href={linkToProject} className="pointer-events-auto">
+                View Project
+              </StyledLink>
+            )}
           </div>
           <div className="relative flex-[0.75] lg:flex-1">
             <CardBoilerPlate />

@@ -19,7 +19,7 @@ export default function ReachOut({ className }: ReachOutProps) {
       <Label className="mb-3 lg:mb-[1.44676vw]">
         <span className="font-light">/</span>&nbsp; Reach Out
       </Label>
-      <div className="flex flex-col text-[24px] leading-[.95] font-[440] tracking-[-.01em] lg:text-[1.85185vw] lg:leading-[1.1] lg:font-[470] lg:tracking-[-0.01em]">
+      <div className="flex flex-col text-[28px] leading-[.95] font-[440] tracking-[-.01em] lg:text-[2.1vw] lg:leading-[1.1] lg:font-[470] lg:tracking-[-0.01em]">
         <UnderlineOnHover underlineColor="#f8f8f8" className="w-fit">
           <Link href="mailto:hello@reviverstudio.com">
             hello@reviverstudio.com

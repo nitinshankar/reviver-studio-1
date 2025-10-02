@@ -19,7 +19,7 @@ export default function UnderlineOnHover({
     <motion.div
       initial="initial"
       whileHover="whileHover"
-      className={cn("relative w-fit [line-height:1.2]", className)}
+      className={cn("relative w-fit [line-height:1.2] overflow-visible", className)}
       {...rest}
     >
       {children}

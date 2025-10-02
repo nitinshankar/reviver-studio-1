@@ -22,7 +22,7 @@ function StyledLink({
         whileHover="whileHover"
         className={cn("relative w-fit cursor-pointer", className)}
       >
-        <span>{children}</span>
+        <span className="transition-colors duration-200 hover:text-[#ff0000]">{children}</span>
         <motion.div
           style={{ backgroundColor: `${underlineColor || "#0b0b0b"}` }}
           className="absolute bottom-0 h-px bg-void-black"
