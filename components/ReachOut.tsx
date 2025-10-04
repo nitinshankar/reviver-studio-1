@@ -30,10 +30,15 @@ export default function ReachOut({ className }: ReachOutProps) {
             nitin@reviverstudio.com
           </Link>
         </UnderlineOnHover>
+        <UnderlineOnHover underlineColor="#f8f8f8" className="w-fit">
+          <Link href="mailto:ritu@reviverstudio.com">
+            ritu@reviverstudio.com
+          </Link>
+        </UnderlineOnHover>
         <div className="flex">
           /&nbsp;
           <UnderlineOnHover underlineColor="#f8f8f8" className="w-fit">
-            <Link href="tel:+919899706783">+91 9899706783</Link>
+            <Link href="tel:+917985665746">+91 7985665746</Link>
           </UnderlineOnHover>
         </div>
       </div>

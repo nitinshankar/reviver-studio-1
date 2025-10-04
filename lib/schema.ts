@@ -8,13 +8,13 @@ export const organizationSchema = {
   foundingDate: "2024",
   founder: {
     "@type": "Person",
-    name: "Nitin Shankar",
-    email: "nitin@reviverstudio.com",
+    name: "Ritu Saxena",
+    email: "ritu@reviverstudio.com",
     jobTitle: "Founder & Creative Director"
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+919899706783",
+    telephone: "+917985665746",
     contactType: "customer service",
     availableLanguage: ["English", "Hindi"]
   },
@@ -25,7 +25,7 @@ export const organizationSchema = {
   },
   sameAs: [
     "https://www.instagram.com/thereviverstudio",
-    "https://wa.me/+919899706783"
+    "https://wa.me/+917985665746"
   ],
   serviceArea: {
     "@type": "Country",

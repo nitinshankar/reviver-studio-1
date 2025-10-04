@@ -26,7 +26,7 @@ export default function FooterDesktop() {
       name: "Instagram",
       href: "https://instagram.com/thereviverstudio",
     },
-    { name: "WhatsApp", href: "https://wa.me/+919899706783" },
+    { name: "WhatsApp", href: "https://wa.me/+917985665746" },
     { name: "Facebook", href: "#" },
     {
       name: "LinkedIn",

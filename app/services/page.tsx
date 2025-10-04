@@ -75,7 +75,7 @@ export default function ServicesPage() {
         {/* WhatsApp + Email (inline) */}
         <div className="flex flex-col gap-[2vh] pt-[2vh] lg:flex-row lg:gap-[3vw] lg:pt-[3vh]">
           <CallToAction
-            href="https://wa.me/+919899706783"
+            href="https://wa.me/+917985665746"
             label="WhatsApp"
             size="sm"
             className="text-[#0b0b0b]"
@@ -83,6 +83,12 @@ export default function ServicesPage() {
           <CallToAction
             href="mailto:nitin@reviverstudio.com"
             label="nitin@reviverstudio.com"
+            size="sm"
+            className="text-[#0b0b0b]"
+          />
+          <CallToAction
+            href="mailto:ritu@reviverstudio.com"
+            label="ritu@reviverstudio.com"
             size="sm"
             className="text-[#0b0b0b]"
           />

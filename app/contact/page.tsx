@@ -79,20 +79,26 @@ export default function ContactPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-              <a href="tel:+919899706783" className="group flex items-center gap-2 text-[18px] font-semibold text-[#0b0b0b] transition-all duration-300 hover:text-[#0b0b0b] hover:text-[20px] lg:text-[1.15vw] lg:hover:text-[1.25vw]">
-                +919899706783
+              <a href="mailto:ritu@reviverstudio.com" className="group flex items-center gap-2 text-[20px] font-semibold text-[#0b0b0b] transition-all duration-300 hover:text-[#ff0000] hover:text-[22px] lg:text-[1.5vw] lg:hover:text-[1.6vw]">
+                ritu@reviverstudio.com
                 <svg className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:animate-pulse lg:h-[0.8vw] lg:w-[0.8vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-              <a href="https://wa.me/+919899706783" className="group flex items-center gap-2 text-[18px] font-semibold text-[#0b0b0b] transition-all duration-300 hover:text-[#0b0b0b] hover:text-[20px] hover:underline lg:text-[1.15vw] lg:hover:text-[1.25vw]">
+              <a href="tel:+917985665746" className="group flex items-center gap-2 text-[18px] font-semibold text-[#0b0b0b] transition-all duration-300 hover:text-[#0b0b0b] hover:text-[20px] lg:text-[1.15vw] lg:hover:text-[1.25vw]">
+                +917985665746
+                <svg className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:animate-pulse lg:h-[0.8vw] lg:w-[0.8vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a href="https://wa.me/+917985665746" className="group flex items-center gap-2 text-[18px] font-semibold text-[#0b0b0b] transition-all duration-300 hover:text-[#0b0b0b] hover:text-[20px] hover:underline lg:text-[1.15vw] lg:hover:text-[1.25vw]">
                 WhatsApp
                 <svg className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:animate-pulse lg:h-[0.8vw] lg:w-[0.8vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <div className="text-[16px] text-[#0b0b0b]/60 lg:text-[1.0vw]">Delhi, India</div>
-              <div className="text-[16px] font-semibold text-[#0b0b0b] lg:text-[1.0vw]">Founded by Nitin Shankar</div>
+              <div className="text-[16px] font-semibold text-[#0b0b0b] lg:text-[1.0vw]">Founded by Ritu Saxena</div>
             </div>
           </div>
           <div>
